@@ -1,0 +1,14 @@
+#hangmanHead {
+  margin: 8px;
+}
+
+#hangmanLowerCenter {
+  margin: 8px;
+}
+#hangmanLeftLeg {
+  margin: 2px;
+}
+
+.hangmanForm, #guessHeader {
+  display: none;
+}

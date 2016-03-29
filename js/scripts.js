@@ -11,7 +11,7 @@ var randomizer = function(randomWordArray) {
 
 var displayCheck = function(guessesLeft) {
   if (guessesLeft === 6) {
-    $("#hangmanHead").append("0");
+    $("#hangmanHead").append(" 0");
   } else if (guessesLeft === 5) {
     $("#hangmanLeftArm").append("/");
   } else if (guessesLeft === 4) {
@@ -19,7 +19,7 @@ var displayCheck = function(guessesLeft) {
   } else if (guessesLeft === 3) {
     $("#hangmanRightArm").append("\\");
   } else if (guessesLeft === 2) {
-  $("#hangmanLowerCenter").append("|");
+  $("#hangmanLowerCenter").append(" |");
   } else if (guessesLeft === 1) {
   $("#hangmanLeftLeg").append("/");
 } else if (guessesLeft === 0) {
@@ -32,14 +32,16 @@ var displayCheck = function(guessesLeft) {
 $(document).ready(function(){
   var letterArray = [];
   var guessesLeft = 7;
-  var Correct = true;
+  var correct = true;
 
 
   var randomCondomentWordArray = ["mayonayse", "mustard", "relish", "horseradish", "leuttice", "tomatoes", "catchup", "cheese"];
 
   $("#myButton").click(function(){
     $("#myButton").hide();
-
+    $(".hangmanForm").show();
+    $("#guessHeader").show();
+    $(".guessesLeft").text(guessesLeft);
     var randomWord = randomizer(randomCondomentWordArray);
     var myHangMan = new HangMan(randomWord);
     for(i = 0; i < myHangMan.charLength; i++) {
@@ -50,15 +52,19 @@ $(document).ready(function(){
   });
   $(".hangmanForm").submit(function(event){
     event.preventDefault();
+
     var playerGuess = $("#formInput").val();
     for (var i = 0; i < letterArray.length; i++) {
-      if(letterArray[i] === playerGuess) {
+      if(letterArray[i].includes(playerGuess) === true) {
         var idValue = "#" + i;
         $(idValue).text(playerGuess);
         correct = true;
+        break;
+        console.log(correct);
       }
       else {
         correct = false;
+        console.log(correct)
       }
     }
     if (correct === false){
@@ -66,5 +72,6 @@ $(document).ready(function(){
       console.log(guessesLeft);
       displayCheck(guessesLeft);
     }
+    $(".guessesLeft").text(guessesLeft);
   });
 });

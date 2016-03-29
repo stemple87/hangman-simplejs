@@ -13,8 +13,10 @@
         <button type="button" id="myButton" name="button">Click to play!</button>
         <hr />
         <br>
+
+        <h3 id="guessHeader">Guesses left: <span class="guessesLeft"></span></h3>
         <div class="hangmanBody" id="hangmanBody">
-          <span id="hangmanHead"><span>
+          <span id="hangmanHead"></span>
           <br>
           <span id="hangmanLeftArm"></span>
           <span id="hangmanCenter"></span>
@@ -27,8 +29,11 @@
         </div>
         <span id="hangmanGuesses"></span>
         <form class="hangmanForm">
+          <br>
           <input id="formInput" type="text" name="formInput" value="">
+          <br><br>
           <button type="submit" name="button">Make a guess!</button>
+
         </form>
       </div>
     </div>
