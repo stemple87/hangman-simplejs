@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <title>Hangman</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hangman</h1>
+      <div class="gameArea">
+        <button type="button" id="myButton" name="button">Click to play!</button>
+        <hr />
+        <br>
+        <div class="hangmanBody" id="hangmanBody">
+          <span id="hangmanHead"><span>
+          <br>
+          <span id="hangmanLeftArm"></span>
+          <span id="hangmanCenter"></span>
+          <span id="hangmanRightArm"></span>
+          <br>
+          <span id="hangmanLowerCenter"></span>
+          <br>
+          <span id="hangmanLeftLeg"></span>
+          <span id="hangmanRightLeg"></span>
+        </div>
+        <span id="hangmanGuesses"></span>
+        <form class="hangmanForm">
+          <input id="formInput" type="text" name="formInput" value="">
+          <button type="submit" name="button">Make a guess!</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
